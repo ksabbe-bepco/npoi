@@ -4369,7 +4369,11 @@ namespace NPOI.XSSF.UserModel
                 PackageRelationship rel = r.GetPackageRelationship();
                 clonedSheet.GetPackagePart().AddRelationship(
                     rel.TargetUri, (TargetMode) rel.TargetMode, rel.RelationshipType);
-                clonedSheet.AddRelation(rel.Id, r);
+
+                //2026-04-21: ksabbe: Add pxRelation, otherwise there is an error:
+                //clonedSheet.AddRelation(rel.Id, r);
+                POIXMLRelation pxRelation = XSSFRelation.GetInstance(rel.RelationshipType);
+                clonedSheet.AddRelation(rel.Id,pxRelation, r);
             }
 
             // copy hyperlinks
@@ -4397,7 +4401,12 @@ namespace NPOI.XSSF.UserModel
                 foreach(POIXMLDocumentPart rel in srcRels)
                 {
                     PackageRelationship relation = rel.GetPackageRelationship();
-                    clonedDg.AddRelation(relation.Id, rel);
+
+                    //2026-04-21: ksabbe: Add pxRelation, otherwise there is an error:
+                    //clonedDg.AddRelation(relation.Id, rel);
+                    POIXMLRelation pxRelation = XSSFRelation.GetInstance(relation.RelationshipType);
+                    clonedDg.AddRelation(relation.Id, pxRelation, rel);
+
                     clonedDg
                         .GetPackagePart()
                         .AddRelationship(relation.TargetUri, relation.TargetMode.Value,

@@ -7,6 +7,9 @@
     <AssemblyOriginatorKeyFile>../npoi.snk</AssemblyOriginatorKeyFile>
     <OutputPath>..\solution\$(Configuration)\</OutputPath>
     <NoWarn>$(NoWarn);CS8002</NoWarn>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Version>2026.04.21.1</Version>
+    <PackageId>NPOI</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

@@ -8,14 +8,8 @@
     <OutputPath>..\solution\$(Configuration)\</OutputPath>
     <PublishPath>..\publish\</PublishPath>  
     <IncludeAllProjectOutputsInPackage>false</IncludeAllProjectOutputsInPackage>
+	<Version>2026.04.21.1</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\main\NPOI.Core.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\ooxml\NPOI.OOXML.Core.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\openxml4Net\NPOI.OpenXml4Net.Core.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\OpenXmlFormats\NPOI.OpenXmlFormats.Core.csproj" PrivateAssets="all" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BouncyCastle.Cryptography" />
@@ -77,6 +71,13 @@
 
   <ItemGroup>
     <BuildOutputInPackage Include="@(_MainAssembly)" TargetFramework="$(TargetFramework)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\main\NPOI.Core.csproj" />
+    <ProjectReference Include="..\ooxml\NPOI.OOXML.Core.csproj" />
+    <ProjectReference Include="..\openxml4Net\NPOI.OpenXml4Net.Core.csproj" />
+    <ProjectReference Include="..\OpenXmlFormats\NPOI.OpenXmlFormats.Core.csproj" />
   </ItemGroup>
 
 </Project>

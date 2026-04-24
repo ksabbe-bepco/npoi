@@ -422,12 +422,12 @@ namespace NPOI
         /// </summary>
         /// <param name="id"></param>
         /// <param name="part">the child to add</param>
-        [Obsolete("deprecated in POI 3.14, scheduled for removal in POI 3.16")]
-        public void AddRelation(String id, POIXMLDocumentPart part)
-        {
-            PackageRelationship pr = part.GetPackagePart().GetRelationship(id);
-            AddRelation(pr, part);
-        }
+        //[Obsolete("deprecated in POI 3.14, scheduled for removal in POI 3.16")]
+        //public void AddRelation(String id, POIXMLDocumentPart part)
+        //{
+        //    PackageRelationship pr = part.GetPackagePart().GetRelationship(id);
+        //    AddRelation(pr, part);
+        //}
 
         /// <summary>
         /// Add a new child POIXMLDocumentPart
